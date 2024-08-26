@@ -84,8 +84,7 @@ class AuthService {
           '${environement.API['SUB_RESSOURCE']['USER']}' +
           '${environement.API['V1']['CREATE_USER']}',
     );
-    print(" URRRRRRRRRRRRRRRRRRRRRRRRLLLLLLLLLLLLLLL ");
-    print(url);
+
     String body = json.encode(payload);
     Map<String, String> headers = {
       'content-type': 'application/json',
@@ -98,11 +97,7 @@ class AuthService {
       body: body,
     );
 
-    print('status register : ${response.statusCode}');
-
     dynamic data = json.decode(response.body);
-
-    print('data response : ${response}');
 
     String status = data['status'];
     return status;
@@ -122,10 +117,8 @@ class AuthService {
       'content-type': 'application/json',
       'cache-control': 'no-cache',
     };
-
     http.Response response =
         await http.post(url, headers: headers, body: json.encode(payload));
-
     if (response.statusCode == 204) {
       return "SUCCESS";
     } else if (response.statusCode == 404) {

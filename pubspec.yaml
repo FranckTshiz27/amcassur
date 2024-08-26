@@ -57,6 +57,7 @@ dependencies:
   flutter_masked_text2: ^0.9.1
   shared_preferences: ^2.0.15
   art_sweetalert: ^0.0.5
+  jwt_decode: ^0.3.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

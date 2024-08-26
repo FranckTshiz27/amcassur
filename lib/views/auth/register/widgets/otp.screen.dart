@@ -254,6 +254,8 @@ class _OtpScreenState extends State<OtpScreen> {
       } else if (widget.preview_widget == "RESET_PASSWORD") {
         print('CASE : RESET PASSWORD===============');
         status = await AuthService.resetPassword(payload);
+
+        print(status);
       }
       setState(() => isLoading = false);
       if (status == 'SUCCESS') {
@@ -326,7 +328,7 @@ class _OtpScreenState extends State<OtpScreen> {
             type: ArtSweetAlertType.danger,
             title: "My Rawsur info",
             text:
-                "Ce numéro de téléphone n'existee pas dans notre base de donnée\nMerci de réesayer avec un autre.",
+                "Ce numéro de téléphone n'existe pas dans notre base de donnée\nMerci de réesayer avec un autre.",
             confirmButtonText: "Ok",
           ),
         );
@@ -377,12 +379,12 @@ class _OtpScreenState extends State<OtpScreen> {
 
       if (responseDialg.isTapConfirmButton) {
         // return at home page
-        // Navigator.pushAndRemoveUntil(
-        //   context,
-        //   MaterialPageRoute(builder: (context) => Home()),
-        //   (route) => false,
-        // );
-        // return;
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => HomeView()),
+          (route) => false,
+        );
+        return;
       }
     }
   }

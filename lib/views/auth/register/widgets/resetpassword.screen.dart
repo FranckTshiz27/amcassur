@@ -63,7 +63,7 @@ class _ResetpasswordScreenState extends State<ResetpasswordScreen> {
         centerTitle: true,
       ),
       body: Container(
-        decoration: const BoxDecoration(gradient: AppColors.APP_SCREENS),
+        // decoration: const BoxDecoration(gradient: AppColors.APP_SCREENS),
         height: double.infinity,
         child: Stack(
           children: [
@@ -109,7 +109,7 @@ class _ResetpasswordScreenState extends State<ResetpasswordScreen> {
                             controller: pwdController,
                             obscureText: isSecuredPassword,
                             labelText: 'Mot de passe',
-                            color: AppColors.WHITE,
+                            color: AppColors.DARK_BLUE,
                             keyboardType: TextInputType.text,
                             suffixIcon: isSecuredPassword
                                 ? Icons.visibility_off
@@ -134,7 +134,7 @@ class _ResetpasswordScreenState extends State<ResetpasswordScreen> {
                             controller: pwdConfirmController,
                             obscureText: isSecuredPasswordConfirm,
                             labelText: 'Confirmer le mot de passe',
-                            color: AppColors.WHITE,
+                            color: AppColors.DARK_BLUE,
                             keyboardType: TextInputType.text,
                             suffixIcon: isSecuredPasswordConfirm
                                 ? Icons.visibility_off
@@ -192,7 +192,7 @@ class _ResetpasswordScreenState extends State<ResetpasswordScreen> {
                                   : Text(
                                       "Réinitialiser".toUpperCase(),
                                       style: TextStyle(
-                                        color: AppColors.BLUE,
+                                        color: AppColors.WHITE,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 15,
                                       ),

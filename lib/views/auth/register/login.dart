@@ -1,4 +1,6 @@
 import 'package:amcassur/configs/appcolors.dart';
+import 'package:amcassur/configs/preference.dart';
+import 'package:amcassur/configs/preferencekeys.dart';
 import 'package:amcassur/service/auth.service.dart';
 import 'package:amcassur/shared/utils/util.dart';
 import 'package:amcassur/shared/widgets/amc_loader.dart';
@@ -8,6 +10,7 @@ import 'package:amcassur/shared/widgets/custom_text_form_field.dart';
 import 'package:amcassur/styles/amc_style.dart';
 import 'package:amcassur/views/auth/register/register_step1.dart';
 import 'package:amcassur/views/auth/register/widgets/resetpassword.screen.dart';
+import 'package:amcassur/views/profile.dart';
 import 'package:amcassur/views/sinistre/sinistre_view.dart';
 import 'package:art_sweetalert/art_sweetalert.dart';
 import 'package:extended_masked_text/extended_masked_text.dart';
@@ -243,7 +246,7 @@ class _LoginScreenState extends State<LoginScreen> {
     // final KimiaFormData kimiaFormData = KimiaFormData();
     // final GosurFormData gosurFormData = GosurFormData();
     // final EducasurFormData educasurFormData = EducasurFormData();
-
+    print(phone);
     if (response == "ERROR") {
       AlertController.show(
           "My Amcassur info",
@@ -273,8 +276,26 @@ class _LoginScreenState extends State<LoginScreen> {
       //   await Preferences.set(PreferenceKeys.PERSMORAL, pers_moral);
       // }
 
-      // await Preferences.set(PreferenceKeys.PHONE_NUMBER, phone);
-      // await Preferences.set(PreferenceKeys.PREFIX_COUNTRY, prefix_country);
+      await Preferences.set(PreferenceKeys.PHONE_NUMBER, phone);
+      await Preferences.set(PreferenceKeys.PREFIX_COUNTRY, prefix_country);
+
+      switch (widget.route) {
+        case "sinistre":
+          // Navigator.pop(context);
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => SinistreView()),
+          );
+          break;
+        case "profile":
+          // Navigator.pop(context);
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => ProfileScreen()),
+          );
+          break;
+      }
+
       // switch (widget.route) {
       //   case 'sinistre':
       //     // Navigator.pop(context);

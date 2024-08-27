@@ -1,10 +1,12 @@
+import 'package:amcassur/service/auth.service.dart';
+import 'package:amcassur/service/user.service.dart';
+import 'package:amcassur/shared/utils/util.dart';
 import 'package:flutter/material.dart';
-import 'package:wc_form_validators/wc_form_validators.dart';
-
+import 'package:flutter_dropdown_alert/alert_controller.dart';
+import 'package:flutter_dropdown_alert/model/data_alert.dart';
 import '../../shared/constants/appcolors.dart';
 import '../../shared/widgets/custom_intl_phone_field.dart';
-import '../../shared/widgets/custom_text_form_field.dart';
-import '../../styles/amc_style.dart';
+
 // import 'register/register_phone.dart';
 
 class LoginView extends StatefulWidget {
@@ -120,21 +122,21 @@ class _LoginViewState extends State<LoginView> {
                                   SizedBox(height: 40),
                                   ElevatedButton(
                                     // style: MyAmcStyle.amcButtonStyle(context),
-                                    onPressed: () {
+                                    onPressed: () async {
                                       String phoneNumber =
                                           phoneController.value.text;
-                                      // String cleanedNumber =
-                                      //     removeDash(phoneNumber);
+                                      String cleanedNumber =
+                                          Util.removeDash(phoneNumber);
                                       if (_formKey.currentState!.validate()) {
                                         if (phoneNumber.length == 9) {
                                           String password =
                                               pwdController.value.text;
                                           setState(() => isLoading = true);
-                                          // await login(
-                                          //   cleanedNumber,
-                                          //   password,
-                                          //   this.prefix_country,
-                                          // );
+                                          await login(
+                                            cleanedNumber,
+                                            password,
+                                            this.prefix_country,
+                                          );
                                         }
                                       }
                                     },
@@ -205,6 +207,46 @@ class _LoginViewState extends State<LoginView> {
       ),
     );
   }
+
+  Future<void> login(
+      String phone, String password, String prefix_country) async {
+    String response = await AuthService.login(phone, password);
+
+    if (response == "ERROR") {
+      AlertController.show(
+          "My Rawsur info",
+          "Authentification échouée. mot de passe ou numéro de téléphone éroné. Veuillez réessayer.",
+          TypeAlert.error);
+    } else if (response == "UNAUTHORIZED") {
+      AlertController.show(
+          "My Rawsur info",
+          "Votre mot de passe ou votre numéro de téléphone est incorrect.",
+          TypeAlert.error);
+    } else if (response == "DESABLE_ACCOUNT") {
+      AlertController.show(
+          "My Rawsur info",
+          "Votre compte n'est pas activé. Pour des raisons administratives, vous devrez vous rendre dans le store RAWSUR le plus proche pour son activation",
+          TypeAlert.error);
+    } else {
+      // SUCCESS
+      dynamic resp = await UserService.getProfile(phone);
+      // String? pers_moral = await PolicyService.getPersmoral(phone);
+    }
+    setState(() => isLoading = false);
+  }
+
+  // Widget togglePassword() {
+  //   return IconButton(
+  //     onPressed: () {
+  //       setState(() {
+  //         isSecuredPassword = !isSecuredPassword;
+  //       });
+  //     },
+  //     icon: isSecuredPassword
+  //         ? Icon(Icons.visibility_off)
+  //         : Icon(Icons.visibility),
+  //   );
+  // }
 
   Widget togglePassword() {
     return IconButton(

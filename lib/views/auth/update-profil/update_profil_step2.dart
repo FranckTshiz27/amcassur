@@ -73,10 +73,10 @@ class _UpdateProfilStep2State extends State<UpdateProfilStep2>
         elevation: 0.0,
         centerTitle: true,
       ),
-      backgroundColor: AppColors.DARK_BLUE,
+      // backgroundColor: AppColors.DARK_BLUE,
       body: Container(
         height: double.infinity,
-        decoration: const BoxDecoration(gradient: AppColors.APP_SCREENS),
+        // decoration: const BoxDecoration(gradient: AppColors.APP_SCREENS),
         child: Container(
           alignment: Alignment.center,
           margin: EdgeInsets.only(left: 25, right: 25),
@@ -93,7 +93,7 @@ class _UpdateProfilStep2State extends State<UpdateProfilStep2>
                     "Ajouter votre pièce d'identité",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: AppColors.WHITE,
+                      color: AppColors.BLUE,
                       fontWeight: FontWeight.bold,
                       fontSize: MediaQuery.of(context).size.width * .05,
                     ),
@@ -102,7 +102,7 @@ class _UpdateProfilStep2State extends State<UpdateProfilStep2>
                   MyRawsurTextFormField(
                     controller: widget.uData.numPieceController,
                     labelText: "Numero de pièce d'identité",
-                    color: AppColors.WHITE,
+                    color: AppColors.BLUE,
                     keyboardType: TextInputType.text,
                     inputFormatters: [RigthTrimFormatter()],
                     autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -122,12 +122,12 @@ class _UpdateProfilStep2State extends State<UpdateProfilStep2>
                     child: TabBar(
                       controller: _tabController,
                       indicatorWeight: 3.0,
-                      indicatorColor: AppColors.DARK_BLUE,
+                      indicatorColor: AppColors.BLUE,
                       indicatorSize: TabBarIndicatorSize.tab,
-                      unselectedLabelColor: AppColors.DARK_BLUE,
+                      unselectedLabelColor: AppColors.BLUE,
                       labelStyle: TextStyle(
                         fontSize: 8,
-                        color: AppColors.DARK_BLUE,
+                        color: AppColors.BLUE,
                       ),
                       onTap: (index) {
                         // Empêche la sélection des deux derniers onglets
@@ -327,7 +327,7 @@ class _UpdateProfilStep2State extends State<UpdateProfilStep2>
                           : Text(
                               'Mettre à jour son profil',
                               style: TextStyle(
-                                color: AppColors.DARK_BLUE,
+                                color: AppColors.WHITE,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15,
                               ),

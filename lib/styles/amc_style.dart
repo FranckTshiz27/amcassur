@@ -40,7 +40,7 @@ class MyRawsurStyle {
 
   static final ButtonStyle myCustomButtonStyle = ButtonStyle(
     backgroundColor: MaterialStateProperty.all(
-      AppColors.DARK_BLUE,
+      AppColors.BLUE,
     ), // Change the color here
     foregroundColor: MaterialStateProperty.all(
       AppColors.WHITE,

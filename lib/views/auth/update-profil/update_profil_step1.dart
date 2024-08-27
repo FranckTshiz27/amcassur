@@ -65,7 +65,7 @@ class _UpdateProfilStep1State extends State<UpdateProfilStep1> {
       ),
       body: Container(
         height: double.infinity,
-        decoration: const BoxDecoration(gradient: AppColors.APP_SCREENS),
+        // decoration: const BoxDecoration(gradient: AppColors.APP_SCREENS),
         child: Center(
           child: Stack(
             children: [
@@ -82,7 +82,7 @@ class _UpdateProfilStep1State extends State<UpdateProfilStep1> {
                         MyRawsurTextFormField(
                           controller: widget.uData.lnameController,
                           labelText: 'Nom',
-                          color: AppColors.WHITE,
+                          color: AppColors.BLUE,
                           keyboardType: TextInputType.text,
                           inputFormatters: [RigthTrimFormatter()],
                           autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -94,7 +94,7 @@ class _UpdateProfilStep1State extends State<UpdateProfilStep1> {
                         MyRawsurTextFormField(
                           controller: widget.uData.pnameController,
                           labelText: 'Postnom',
-                          color: AppColors.WHITE,
+                          color: AppColors.BLUE,
                           keyboardType: TextInputType.text,
                           inputFormatters: [RigthTrimFormatter()],
                           autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -103,7 +103,7 @@ class _UpdateProfilStep1State extends State<UpdateProfilStep1> {
                         MyRawsurTextFormField(
                           controller: widget.uData.fnameController,
                           labelText: 'Prénom',
-                          color: AppColors.WHITE,
+                          color: AppColors.BLUE,
                           keyboardType: TextInputType.text,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           inputFormatters: [RigthTrimFormatter()],
@@ -115,7 +115,7 @@ class _UpdateProfilStep1State extends State<UpdateProfilStep1> {
                         MyRawsurTextFormField(
                           controller: widget.uData.codeClientController,
                           labelText: 'Code client',
-                          color: AppColors.WHITE,
+                          color: AppColors.BLUE,
                           keyboardType: TextInputType.number,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           inputFormatters: [
@@ -126,7 +126,7 @@ class _UpdateProfilStep1State extends State<UpdateProfilStep1> {
                         MyRawsurTextFormField(
                           controller: widget.uData.emailController,
                           labelText: 'Email',
-                          color: AppColors.WHITE,
+                          color: AppColors.BLUE,
                           keyboardType: TextInputType.text,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           inputFormatters: [
@@ -143,7 +143,7 @@ class _UpdateProfilStep1State extends State<UpdateProfilStep1> {
                         CustomIntlPhoneField(
                           controller: widget.uData.phoneController,
                           labelText: "Téléphone",
-                          color: AppColors.WHITE,
+                          color: AppColors.BLUE,
                           searchLabelText: 'Rechercher un pays',
                           onCountryChanged: (country) {
                             widget.uData.prefix_country =
@@ -155,7 +155,7 @@ class _UpdateProfilStep1State extends State<UpdateProfilStep1> {
                           maxLines: 2,
                           controller: widget.uData.adressController,
                           labelText: 'Adresse',
-                          color: AppColors.WHITE,
+                          color: AppColors.BLUE,
                           keyboardType: TextInputType.text,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: Validators.compose([
@@ -166,7 +166,7 @@ class _UpdateProfilStep1State extends State<UpdateProfilStep1> {
                         MyRawsurTextFormField(
                           controller: widget.uData.lieuNaissController,
                           labelText: 'Lieu de naissance',
-                          color: AppColors.WHITE,
+                          color: AppColors.BLUE,
                           keyboardType: TextInputType.text,
                           inputFormatters: [RigthTrimFormatter()],
                           autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -181,7 +181,7 @@ class _UpdateProfilStep1State extends State<UpdateProfilStep1> {
                           controller:
                               widget.uData.dateNaisSouscripteurController,
                           labelText: 'Date de naissance',
-                          color: AppColors.WHITE,
+                          color: AppColors.BLUE,
                           keyboardType: TextInputType.datetime,
                           suffixIcon: Icons.calendar_month,
                           validator: widget.uData.validateDateField(),
@@ -216,11 +216,7 @@ class _UpdateProfilStep1State extends State<UpdateProfilStep1> {
                                   await UserService.getUserByUsername(
                                 phone,
                               );
-                              print('RESPONSE : $response');
                               setState(() => isLoading = false);
-                              print('RESPONSE : ${response == null}');
-                              print('RESPONSE : ${response == ''}');
-                              print('STATUS : ${UserService.statusResponse}');
                               if (response != '' &&
                                   UserService.statusResponse == 200) {
                                 Navigator.push(
@@ -255,12 +251,12 @@ class _UpdateProfilStep1State extends State<UpdateProfilStep1> {
                             width: double.infinity,
                             child: isLoading
                                 ? AmcLoader(
-                                    color: AppColors.DARK_BLUE,
+                                    color: AppColors.BLUE,
                                   )
                                 : Text(
                                     'Suivant',
                                     style: TextStyle(
-                                      color: AppColors.DARK_BLUE,
+                                      color: AppColors.WHITE,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15,
                                     ),

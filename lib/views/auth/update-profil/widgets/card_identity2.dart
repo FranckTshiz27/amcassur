@@ -118,7 +118,7 @@ class _CardIdentityUpdateState extends State<CardIdentityUpdate> {
                 Text(
                   widget.title,
                   style: TextStyle(
-                    color: AppColors.WHITE,
+                    color: AppColors.BLUE,
                   ),
                 ),
                 isPassport
@@ -128,7 +128,7 @@ class _CardIdentityUpdateState extends State<CardIdentityUpdate> {
                         child: MyRawsurTextFormField(
                           controller: widget.uData.dateExpPassporController,
                           labelText: "Date expiration passeport",
-                          color: AppColors.WHITE,
+                          color: AppColors.BLUE,
                           keyboardType: TextInputType.datetime,
                           suffixIcon: Icons.calendar_month,
                           onPressed: () {

@@ -69,6 +69,7 @@ class _UpdatepasswordScreenState extends State<UpdatepasswordScreen> {
     var password = Preferences.get(PreferenceKeys.PASSWORD);
 
     String? phone = phone_number;
+
     phone = phone?.replaceRange(2, 3, "*");
     phone = phone?.replaceRange(3, 4, "*");
     phone = phone?.replaceRange(4, 5, "*");
@@ -87,7 +88,7 @@ class _UpdatepasswordScreenState extends State<UpdatepasswordScreen> {
       body: Container(
         height: double.infinity,
         padding: EdgeInsets.only(left: 25, right: 25),
-        decoration: const BoxDecoration(gradient: AppColors.APP_SCREENS),
+        // decoration: const BoxDecoration(gradient: AppColors.APP_SCREENS),
         child: Stack(children: [
           SingleChildScrollView(
             child: Center(
@@ -107,7 +108,7 @@ class _UpdatepasswordScreenState extends State<UpdatepasswordScreen> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
-                      color: Colors.white,
+                      color: AppColors.DARK_BLUE,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -117,7 +118,7 @@ class _UpdatepasswordScreenState extends State<UpdatepasswordScreen> {
                       "Veuillez renseigner ci-dessous votre ancien mot de passe et le nouveau et un code vous sera envoyé par sms au ${prefix_country}" +
                           "${phone} pour une validation. : ",
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: AppColors.DARK_BLUE),
                     ),
                   ),
                   SizedBox(height: 30),
@@ -129,7 +130,7 @@ class _UpdatepasswordScreenState extends State<UpdatepasswordScreen> {
                           controller: old_pwdController,
                           obscureText: old_isSecuredPassword,
                           labelText: 'Votre ancien mot de passe',
-                          color: AppColors.WHITE,
+                          color: AppColors.DARK_BLUE,
                           keyboardType: TextInputType.text,
                           suffixIcon: old_isSecuredPassword
                               ? Icons.visibility_off
@@ -150,7 +151,7 @@ class _UpdatepasswordScreenState extends State<UpdatepasswordScreen> {
                           controller: pwdController,
                           obscureText: isSecuredPassword,
                           labelText: 'Mot de passe',
-                          color: AppColors.WHITE,
+                          color: AppColors.DARK_BLUE,
                           keyboardType: TextInputType.text,
                           suffixIcon: isSecuredPassword
                               ? Icons.visibility_off
@@ -171,7 +172,7 @@ class _UpdatepasswordScreenState extends State<UpdatepasswordScreen> {
                           controller: pwdConfirmController,
                           obscureText: isSecuredPasswordConfirm,
                           labelText: 'Confirmer le mot de passe',
-                          color: AppColors.WHITE,
+                          color: AppColors.DARK_BLUE,
                           keyboardType: TextInputType.text,
                           suffixIcon: isSecuredPasswordConfirm
                               ? Icons.visibility_off
@@ -199,14 +200,14 @@ class _UpdatepasswordScreenState extends State<UpdatepasswordScreen> {
                         ElevatedButton(
                           style: MyRawsurStyle.myCustomButtonStyle,
                           onPressed: () async {
-                            // if (password !=
-                            //     old_pwdController.value.text.trim()) {
-                            //   showSnackbar(
-                            //     "My Rawsur info",
-                            //     "\nVotre ancien mot de passe est incorrect.",
-                            //   );
-                            //   return;
-                            // }
+                            if (password !=
+                                old_pwdController.value.text.trim()) {
+                              showSnackbar(
+                                "My Rawsur info",
+                                "\nVotre ancien mot de passe est incorrect.",
+                              );
+                              return;
+                            }
 
                             if (_updatePwKey.currentState!.validate()) {
                               String pwd = pwdController.value.text.trim();
@@ -228,7 +229,7 @@ class _UpdatepasswordScreenState extends State<UpdatepasswordScreen> {
                                 : Text(
                                     "Changer le mot de passe".toUpperCase(),
                                     style: TextStyle(
-                                      color: AppColors.DARK_BLUE,
+                                      color: AppColors.WHITE,
                                       fontWeight: FontWeight.bold,
                                       fontSize:
                                           MediaQuery.of(context).size.width *

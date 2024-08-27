@@ -213,24 +213,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // Text(
-                  //   '$lname ${token!['given_name']}',
-                  //   style: TextStyle(
-                  //     color: AppColors.BLUE,
-                  //     fontSize: MediaQuery.of(context).size.width * .05,
-                  //     fontWeight: FontWeight.bold,
-                  //   ),
-                  //   // GoogleFonts.roboto(color: Colors.black, fontSize: 18),
-                  // ),
-                  // Divider(color: Colors.black),
-                  Text(""),
-                  // Text(
-                  //   '${prefix_country} ${StringUtil.addSpaceEveryThreeChars(phone_number)}',
-                  //   style: TextStyle(
-                  //     color: AppColors.BLUE,
-                  //     fontSize: MediaQuery.of(context).size.width * .05,
-                  //   ),
-                  // ),
+                  Text(
+                    '$lname ${token!['given_name']}',
+                    style: TextStyle(
+                      color: AppColors.BLUE,
+                      fontSize: MediaQuery.of(context).size.width * .05,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    // GoogleFonts.roboto(color: Colors.black, fontSize: 18),
+                  ),
+                  Divider(color: Colors.black),
+                  Text(
+                    '${prefix_country} ${StringUtil.addSpaceEveryThreeChars(phone_number)}',
+                    style: TextStyle(
+                      color: AppColors.BLUE,
+                      fontSize: MediaQuery.of(context).size.width * .05,
+                    ),
+                  ),
                 ],
               ),
             ),

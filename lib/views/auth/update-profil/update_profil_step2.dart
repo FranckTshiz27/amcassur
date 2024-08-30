@@ -16,6 +16,7 @@ import 'package:amcassur/styles/amc_style.dart';
 import 'package:amcassur/views/auth/update-profil/provider/update_data.dart';
 import 'package:amcassur/views/auth/update-profil/widgets/card_identity2.dart';
 import 'package:amcassur/views/home/home_view.dart';
+import 'package:amcassur/views/home/product_view.dart';
 import 'package:art_sweetalert/art_sweetalert.dart';
 import 'package:flutter/material.dart';
 import 'package:wc_form_validators/wc_form_validators.dart';
@@ -308,7 +309,7 @@ class _UpdateProfilStep2State extends State<UpdateProfilStep2>
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const HomeView(),
+                                  builder: (context) => HomeView(),
                                 ),
                               );
                             },

@@ -1,8 +1,9 @@
 import 'package:amcassur/views/auth/login.dart';
+import 'package:amcassur/views/home/home_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import './home/home_view.dart';
+import 'home/product_view.dart';
 
 import '../shared/constants/appcolors.dart';
 
@@ -47,7 +48,7 @@ class _SplashViewState extends State<SplashView> {
       (() {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const HomeView()),
+          MaterialPageRoute(builder: (context) => HomeView()),
           // MaterialPageRoute(builder: (context) => const LoginView()),
         );
       }),

@@ -233,8 +233,6 @@ class _RegisterStep1State extends State<RegisterStep1> {
                                   await UserService.getUserByUsername(
                                 phone,
                               );
-                              print("-------------------------- ");
-                              print(response);
                               setState(() => isLoading = false);
                               if (response == '') {
                                 Navigator.push(

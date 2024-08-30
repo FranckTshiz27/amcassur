@@ -7,6 +7,7 @@ import 'package:amcassur/shared/widgets/custom_text_form_field.dart';
 import 'package:amcassur/styles/amc_style.dart';
 import 'package:amcassur/views/auth/register/widgets/otp.screen.dart';
 import 'package:amcassur/views/home/home_view.dart';
+import 'package:amcassur/views/home/product_view.dart';
 import 'package:art_sweetalert/art_sweetalert.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

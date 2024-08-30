@@ -5,6 +5,7 @@ import 'package:amcassur/shared/utils/compare_session_time.dart';
 import 'package:amcassur/shared/utils/convert_token.dart';
 import 'package:amcassur/views/auth/register/login.dart';
 import 'package:amcassur/views/auth/register/register_step1.dart';
+import 'package:amcassur/views/home/home_view.dart';
 import 'package:amcassur/views/profile.dart';
 import 'package:flutter/material.dart';
 import '../../views/sinistre/sinistre_view.dart';
@@ -49,8 +50,8 @@ class AmcDrawer extends StatelessWidget {
                 color: AppColors.MAIN_COLOR,
               ),
             ),
-            // onTap: () => Navigator.pushNamed(context, HomeView.routName),
-            onTap: () => Navigator.pop(context),
+            onTap: () => Navigator.pushNamed(context, HomeView.routName),
+            // onTap: () => Navigator.pop(context),
           ),
           // ListTile(
           //   leading: Icon(

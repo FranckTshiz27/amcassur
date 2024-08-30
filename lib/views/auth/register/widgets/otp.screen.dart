@@ -9,6 +9,7 @@ import 'package:amcassur/views/auth/register/widgets/valideChangePassword.screen
 import 'package:amcassur/views/auth/register/widgets/valideOtp.screen.dart';
 import 'package:amcassur/views/auth/register/widgets/valideResetPassword.screen.dart';
 import 'package:amcassur/views/home/home_view.dart';
+import 'package:amcassur/views/home/product_view.dart';
 import 'package:art_sweetalert/art_sweetalert.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

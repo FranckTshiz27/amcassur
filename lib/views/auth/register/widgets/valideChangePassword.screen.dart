@@ -1,6 +1,7 @@
 import 'package:amcassur/configs/appcolors.dart';
 import 'package:amcassur/configs/constants.dart';
 import 'package:amcassur/views/home/home_view.dart';
+import 'package:amcassur/views/home/product_view.dart';
 import 'package:flutter/material.dart';
 
 class ValideChangePasswordScreen extends StatelessWidget {

@@ -1,14 +1,14 @@
 import 'package:amcassur/configs/environment.dart';
 import 'package:amcassur/configs/preference.dart';
 import 'package:amcassur/providers/register_data_provider.dart';
+import 'package:amcassur/views/home/home_view.dart';
+import 'package:amcassur/views/home/product_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:amcassur/shared/constants/appcolors.dart';
-
 import 'providers/product_provider.dart';
 import 'views/auth/login.dart';
-import 'views/home/home_view.dart';
 import 'views/home/widgets/product_details.dart';
 import 'views/sinistre/sinistre_view.dart';
 import 'views/splash_view.dart';
@@ -29,7 +29,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   ProductProvider productProvider = ProductProvider();
-  // RegisterProvider registerProvider = RegisterProvider();
   RegisterDataProvider registerDataProvider = RegisterDataProvider();
   @override
   Widget build(BuildContext context) {
@@ -54,10 +53,11 @@ class _MyAppState extends State<MyApp> {
         initialRoute: SplashView.routName,
         routes: {
           SplashView.routName: (_) => const SplashView(),
-          HomeView.routName: (_) => const HomeView(),
+          HomeView.routName: (_) => HomeView(),
           LoginView.routName: (_) => const LoginView(),
           ProductDetail.routName: (_) => const ProductDetail(),
           SinistreView.routName: (_) => const SinistreView(),
+          ProductView.routName: (_) => const ProductView(),
         },
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
